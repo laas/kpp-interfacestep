@@ -15,7 +15,7 @@ libkpp_interfacestep_la_SOURCES = 			\
 				command-dynamicpath.cc
 
 libkpp_interfacestep_la_LIBADD = $(KPPINTERFACE_LIBS) $(HPPCORBASERVER_LIBS)  $(HPPWHOLEBODYTEPPLANNER_LIBS)
-libkpp_interfacestep_la_CPPFLAGS = $(AM_CPPFLAGS) $(KPPINTERFACE_CFLAGS) $(HPPCORBASERVER_CFLAGS)  
+libkpp_interfacestep_la_CPPFLAGS = $(AM_CPPFLAGS) $(KPPINTERFACE_CFLAGS) $(HPPCORBASERVER_CFLAGS) $(HPPWHOLEBODYTEPPLANNER_CFLAGS) 
 
 kmodule_DATA =				\
 	libkpp-interfacestep.kab
