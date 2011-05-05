@@ -1,0 +1,23 @@
+include $(top_srcdir)/build-aux/init.mk
+include $(top_srcdir)/build-aux/kineo.mk
+
+KINEO_LIB_SUFFIX=
+
+# Add available warnings flags.
+AM_CXXFLAGS += $(WARNING_CXXFLAGS)
+
+kmoduledir = $(libdir)/modules/$(KINEO_LICENSE_HOST)
+kmodule_LTLIBRARIES = libkpp-interfacestep.la
+
+libkpp_interfacestep_la_SOURCES = 			\
+				interface.cc \
+				command-setinitgoal.cc \
+				command-dynamicpath.cc
+
+libkpp_interfacestep_la_LIBADD = $(KPPINTERFACE_LIBS) $(HPPCORBASERVER_LIBS)  $(HPPWHOLEBODYTEPPLANNER_LIBS)
+libkpp_interfacestep_la_CPPFLAGS = $(AM_CPPFLAGS) $(KPPINTERFACE_CFLAGS) $(HPPCORBASERVER_CFLAGS)  
+
+kmodule_DATA =				\
+	libkpp-interfacestep.kab
+
+CLEANFILES += $(kmodule_DATA)
