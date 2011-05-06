@@ -7,7 +7,7 @@
 # include <kpp/interfacestep/interface.hh>
 # include <kpp/interfacestep/command-setinitgoal.hh>
 # include <kpp/interfacestep/command-dynamicpath.hh>
-
+# include <kpp/interfacestep/command-removeconstraints.hh>
 
 # include "config.h"
 
@@ -86,12 +86,17 @@ namespace kpp
 						    inCommandFactory->environment(),
 						    "Set Init/Goal configs",
 						    "Set Init/Goal configs");
+      commandRemoveConstraints_ =  CkppUICommand::create ( CommandRemoveConstraints::create ( this ),
+						     inCommandFactory->environment(),
+						     "Remove Foot Constraints",
+						     "Remove Foot Constraints");
       commandDynamicPath_ =  CkppUICommand::create ( CommandDynamicPath::create ( this ),
 						     inCommandFactory->environment(),
 						     "Animate Path",
 						     "Animate Path");
 
       hppUICommandList->appendCommand(commandSetInitGoal_);
+      hppUICommandList->appendCommand(commandRemoveConstraints_);
       hppUICommandList->appendCommand(commandDynamicPath_);
 
       outMenuCommandListVector.push_back ( hppUICommandList );
