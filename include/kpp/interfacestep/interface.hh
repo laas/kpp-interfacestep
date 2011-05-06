@@ -56,7 +56,8 @@ namespace kpp
       InterfaceWkPtr attWeakPtr;
       CkppUICommandShPtr commandSetInitGoal_;
       CkppUICommandShPtr commandDynamicPath_;
-
+      CkppUICommandShPtr commandRemoveConstraints_;
+   
     };
 
   } // end of namespace interfaceWalk.

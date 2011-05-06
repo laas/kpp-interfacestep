@@ -7,3 +7,14 @@ doc/Makefile.in
 include/Makefile.in
 src/Makefile.in
 tests/Makefile.in
+build-aux (modified content)
+include/Makefile.am~
+include/kpp/interfacestep/command-dynamicpath.hh~
+include/kpp/interfacestep/command-setinitgoal.hh~
+include/kpp/interfacestep/fwd.hh~
+include/kpp/interfacestep/interface.hh~
+include/kpp/interfacestep/kppinterface-nowarning.hh~
+src/Makefile.am~
+src/command-dynamicpath.cc~
+src/command-setinitgoal.cc~
+src/interface.cc~
