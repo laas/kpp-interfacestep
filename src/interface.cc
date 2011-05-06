@@ -26,7 +26,7 @@ namespace kpp
     InterfaceShPtr
     Interface::create ()
     {
-      double samplingPeriod = 0.005;
+      double samplingPeriod = 0.05;
 
       std::string pathToHrp2 (OPENHRP_PREFIX);
       pathToHrp2 += "/Controller/IOserver/robot/HRP2JRL/model/HRP2JRLmain.wrl";
