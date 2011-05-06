@@ -12,6 +12,7 @@ namespace kpp
     KIT_PREDEF_CLASS (Interface);
     KIT_PREDEF_CLASS (CommandSetInitGoal);
     KIT_PREDEF_CLASS (CommandDynamicPath);
+    KIT_PREDEF_CLASS (CommandRemoveConstraints);
   } 
 } // end of namespace kpp.
 

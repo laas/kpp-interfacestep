@@ -6,4 +6,5 @@ nobase_include_HEADERS =				\
 		kpp/interfacestep/kppinterface-nowarning.hh \
 		kpp/interfacestep/interface.hh \
 		kpp/interfacestep/command-setinitgoal.hh \
-		kpp/interfacestep/command-dynamicpath.hh
+		kpp/interfacestep/command-dynamicpath.hh \
+		kpp/interfacestep/command-removeconstraints.hh
