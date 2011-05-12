@@ -13,7 +13,8 @@ libkpp_interfacestep_la_SOURCES = 			\
 				interface.cc \
 				command-setinitgoal.cc \
 				command-dynamicpath.cc \
-				command-removeconstraints.cc
+				command-removeconstraints.cc \
+				command-grabobject.cc
 
 libkpp_interfacestep_la_LIBADD = $(KPPINTERFACE_LIBS) $(HPPCORBASERVER_LIBS)  $(HPPWHOLEBODYTEPPLANNER_LIBS)
 libkpp_interfacestep_la_CPPFLAGS = $(AM_CPPFLAGS) $(KPPINTERFACE_CFLAGS) $(HPPCORBASERVER_CFLAGS) $(HPPWHOLEBODYTEPPLANNER_CFLAGS) 

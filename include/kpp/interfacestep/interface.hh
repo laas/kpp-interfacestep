@@ -54,6 +54,7 @@ namespace kpp
     private:
       /// \brief Weak pointer to itself
       InterfaceWkPtr attWeakPtr;
+      CkppUICommandShPtr commandGrabObject_;
       CkppUICommandShPtr commandSetInitGoal_;
       CkppUICommandShPtr commandDynamicPath_;
       CkppUICommandShPtr commandRemoveConstraints_;

@@ -96,8 +96,7 @@ namespace kpp
 	dynamic_cast<Planner*> (kpp_->hppPlanner());
       
       if (planner)
-	  planner->humanoidRobot ()->userConstraints ()->remove (planner
-							       ->wholeBodyConstraint ());
+	  planner->humanoidRobot ()->userConstraints ()->remove (planner->wholeBodyConstraint ());
       else
 	return KD_ERROR;
 

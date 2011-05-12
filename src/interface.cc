@@ -5,6 +5,7 @@
 # include <KineoController/kppUICommand.h>
 
 # include <kpp/interfacestep/interface.hh>
+# include <kpp/interfacestep/command-grabobject.hh>
 # include <kpp/interfacestep/command-setinitgoal.hh>
 # include <kpp/interfacestep/command-dynamicpath.hh>
 # include <kpp/interfacestep/command-removeconstraints.hh>
@@ -82,6 +83,11 @@ namespace kpp
 
       CkppUICommandListShPtr hppUICommandList = CkppUICommandList::create ( "Step Planner" );
 
+      commandGrabObject_ = CkppUICommand::create ( CommandGrabObject::create ( this ),
+						    inCommandFactory->environment(),
+						    "Generate goal configs",
+						    "Generate goal configs");
+
       commandSetInitGoal_ = CkppUICommand::create ( CommandSetInitGoal::create ( this ),
 						    inCommandFactory->environment(),
 						    "Set Init/Goal configs",
@@ -95,6 +101,7 @@ namespace kpp
 						     "Animate Path",
 						     "Animate Path");
 
+      hppUICommandList->appendCommand(commandGrabObject_);
       hppUICommandList->appendCommand(commandSetInitGoal_);
       hppUICommandList->appendCommand(commandRemoveConstraints_);
       hppUICommandList->appendCommand(commandDynamicPath_);
