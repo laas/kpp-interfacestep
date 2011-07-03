@@ -2,8 +2,10 @@
 # include <KineoModel/kppComponentClassFilter.h>
 # include <KineoModel/kppComponentParameter.h>
 
-# include <kpp/interfacestep/command-removeconstraints.hh>
-# include <kpp/interfacestep/interface.hh>
+# include <hpp/wholebody-step-planner/wholebody-constraint.hh>
+
+# include "kpp/interfacestep/command-removeconstraints.hh"
+# include "kpp/interfacestep/interface.hh"
 
 
 namespace kpp

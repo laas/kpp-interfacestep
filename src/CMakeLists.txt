@@ -1,0 +1,33 @@
+# Copyright (c) 2011 CNRS
+# Author: Florent Lamiraux
+#
+# This file is part of kpp-interfacestep.
+# kpp-interfacestep is free software: you can redistribute it
+# and/or modify it under the terms of the GNU Lesser General Public
+# License as published by the Free Software Foundation, either version
+# 3 of the License, or (at your option) any later version.
+#
+# kpp-interfacestep is distributed in the hope that it will be
+# useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+# of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Lesser Public License for more details.  You should have
+# received a copy of the GNU Lesser General Public License along with
+# kpp-interfacestep.  If not, see
+# <http://www.gnu.org/licenses/>.
+
+#INCLUDE(cmake/kineo.cmake)
+
+SET(SOURCES
+  interface.cc
+  command-setinitgoal.cc
+  command-dynamicpath.cc
+  command-removeconstraints.cc
+  command-grabobject.cc
+)
+
+ADD_LIBRARY(${PROJECT_NAME} SHARED ${SOURCES})
+SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES SOVERSION ${PROJECT_VERSION})
+INSTALL(TARGETS ${PROJECT_NAME} DESTINATION lib)
+
+PKG_CONFIG_USE_DEPENDENCY(${PROJECT_NAME} hpp-wholebody-step-planner)
+PKG_CONFIG_USE_DEPENDENCY(${PROJECT_NAME} kppInterface)

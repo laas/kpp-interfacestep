@@ -28,20 +28,6 @@ namespace kpp
     Interface::create ()
     {
       double samplingPeriod = 0.05;
-
-      std::string pathToHrp2 (OPENHRP_PREFIX);
-      pathToHrp2 += "/Controller/IOserver/robot/HRP2JRL/model/HRP2JRLmain.wrl";
-
-   
-   
-      std::ifstream hrp2Wrl;
-      hrp2Wrl.open (pathToHrp2.c_str (), std::ios_base::in);
-      hrp2Wrl.close ();
-      if (hrp2Wrl.fail ())
-	{
-	  return InterfaceShPtr ();
-	}
-
       Planner * planner = new Planner(samplingPeriod);
 
       if (!planner)
