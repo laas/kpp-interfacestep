@@ -4,6 +4,8 @@
 # include <KineoController/kppUICommandList.h>
 # include <KineoController/kppUICommand.h>
 
+# include <hpp/wholebody-step-planner/planner.hh>
+
 # include <kpp/interfacestep/interface.hh>
 # include <kpp/interfacestep/command-grabobject.hh>
 # include <kpp/interfacestep/command-setinitgoal.hh>

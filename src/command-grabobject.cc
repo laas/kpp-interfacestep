@@ -18,6 +18,8 @@
 
 #include <tlcWholeBodyPlanner/tlcGraspBallGoalGenerator.h>
 
+# include <hpp/wholebody-step-planner/planner.hh>
+
 #include "kpp/interfacestep/command-grabobject.hh"
 #include "kpp/interfacestep/interface.hh"
 

@@ -3,6 +3,7 @@
 # include <KineoModel/kppComponentParameter.h>
 
 # include <hpp/wholebody-step-planner/wholebody-constraint.hh>
+# include <hpp/wholebody-step-planner/planner.hh>
 
 # include "kpp/interfacestep/command-removeconstraints.hh"
 # include "kpp/interfacestep/interface.hh"

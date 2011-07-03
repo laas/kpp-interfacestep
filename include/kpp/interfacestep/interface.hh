@@ -4,12 +4,10 @@
 
 # include <KineoController/kppUICommand.h>
 
-# include <hpp/wholebody-step-planner/planner.hh>
+# include <hpp/wholebody-step-planner/fwd.hh>
 
 # include <kpp/interfacestep/fwd.hh>
 # include <kpp/interfacestep/kppinterface-nowarning.hh>
-
-
 
 namespace kpp
 {

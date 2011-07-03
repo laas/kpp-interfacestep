@@ -2,6 +2,8 @@
 # include <KineoModel/kppComponentClassFilter.h>
 # include <KineoModel/kppComponentParameter.h>
 
+# include <hpp/wholebody-step-planner/planner.hh>
+
 # include <kpp/interfacestep/command-dynamicpath.hh>
 # include <kpp/interfacestep/interface.hh>
 
