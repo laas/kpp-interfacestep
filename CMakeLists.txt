@@ -23,9 +23,12 @@ SET(CUSTOM_HEADER_DIR "kpp/interfacestep")
 
 INCLUDE(cmake/base.cmake)
 INCLUDE(cmake/cpack.cmake)
+INCLUDE(cmake/kineo.cmake)
 
 SET(PROJECT_NAME kpp-interfacestep)
-SET(PROJECT_DESCRIPTION "Algorithm to plan whole-body and walk planning trajectories for humanoid robots by dichotomy")
+SET(PROJECT_DESCRIPTION
+  "Kineo Path Planner add-on for hpp-wholebody-step-planner"
+  )
 SET(PROJECT_URL "http://github.com/laas/kpp-interfacestep")
 
 SET(${PROJECT_NAME}_HEADERS
@@ -49,9 +52,23 @@ ENDIF()
 # Search for dependencies.
 ADD_REQUIRED_DEPENDENCY("hpp-wholebody-step-planner >= 0.1")
 ADD_REQUIRED_DEPENDENCY("kppInterface >= 1.7")
-PKG_CONFIG_APPEND_LIBS(${PROJECT_NAME})
 
-ADD_SUBDIRECTORY(src)
+# Reinitialize directory where libs are installed since for Kineo addon, this
+# directory is non standard: lib/modules/${UNAME_N}
+SET(PKG_CONFIG_LIBS "")
+
+SET(KINEO_ADDON_SOURCES
+  src/interface.cc
+  src/command-setinitgoal.cc
+  src/command-dynamicpath.cc
+  src/command-removeconstraints.cc
+  src/command-grabobject.cc
+)
+
+KINEO_ADDON(${PROJECT_NAME})
+
+PKG_CONFIG_USE_DEPENDENCY(${PROJECT_NAME} hpp-wholebody-step-planner)
+PKG_CONFIG_USE_DEPENDENCY(${PROJECT_NAME} kppInterface)
 
 SETUP_PROJECT_FINALIZE()
 SETUP_PROJECT_CPACK()

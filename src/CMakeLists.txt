@@ -17,17 +17,3 @@
 
 #INCLUDE(cmake/kineo.cmake)
 
-SET(SOURCES
-  interface.cc
-  command-setinitgoal.cc
-  command-dynamicpath.cc
-  command-removeconstraints.cc
-  command-grabobject.cc
-)
-
-ADD_LIBRARY(${PROJECT_NAME} SHARED ${SOURCES})
-SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES SOVERSION ${PROJECT_VERSION})
-INSTALL(TARGETS ${PROJECT_NAME} DESTINATION lib)
-
-PKG_CONFIG_USE_DEPENDENCY(${PROJECT_NAME} hpp-wholebody-step-planner)
-PKG_CONFIG_USE_DEPENDENCY(${PROJECT_NAME} kppInterface)
