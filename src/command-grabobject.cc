@@ -18,21 +18,11 @@
 
 #include <tlcWholeBodyPlanner/tlcGraspBallGoalGenerator.h>
 
+# include <hpp/util/debug.hh>
 # include <hpp/wholebody-step-planner/planner.hh>
 
 #include "kpp/interfacestep/command-grabobject.hh"
 #include "kpp/interfacestep/interface.hh"
-
-#if DEBUG==2
-#define ODEBUG2(x) std::cerr << "kpp-interfacestep:" << x << std::endl
-#define ODEBUG1(x) std::cerr << "kpp-interfacestep:" << x << std::endl
-#elif DEBUG==1
-#define ODEBUG2(x)
-#define ODEBUG1(x) std::cerr << "kpp-interfacestep:" << x << std::endl
-#else
-#define ODEBUG2(x)
-#define ODEBUG1(x)
-#endif
 
 namespace kpp
 {
@@ -178,7 +168,7 @@ namespace kpp
       CtlcGraspBallGoalGeneratorShPtr goalConfigGenerator = planner->getGoalTask();
       if ( !goalConfigGenerator )
 	{
-	  ODEBUG1 ( "Error in getting goalConfigGenerator " );
+	  hppDout (warning, "Error in getting goalConfigGenerator");
 	  return KD_ERROR;
 	}
       goalConfigGenerator->setNbGoalConfig(1);

@@ -40,6 +40,11 @@ SET(${PROJECT_NAME}_HEADERS
 
 SETUP_PROJECT()
 
+# Activate hpp-util logging if requested
+IF (HPP_DEBUG)
+  MESSAGE(STATUS "Activate hpp-util logging.")
+  SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DHPP_DEBUG")
+ENDIF()
 
 # Search for dependencies.
 ADD_REQUIRED_DEPENDENCY("hpp-wholebody-step-planner >= 0.1")
