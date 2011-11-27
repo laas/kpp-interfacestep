@@ -4,6 +4,8 @@
 # include <KineoController/kppUICommandList.h>
 # include <KineoController/kppUICommand.h>
 
+# include <jrl/mal/matrixabstractlayer.hh>
+
 # include <hpp/wholebody-step-planner/planner.hh>
 
 # include <kpp/interfacestep/interface.hh>

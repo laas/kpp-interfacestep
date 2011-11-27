@@ -16,8 +16,6 @@
 #include "KineoController/kppDocument.h"
 #include "KineoGUI/kppMainWindowUICommandFactory.h"
 
-#include <tlcWholeBodyPlanner/tlcGraspBallGoalGenerator.h>
-
 # include <hpp/util/debug.hh>
 # include <hpp/wholebody-step-planner/planner.hh>
 
@@ -165,15 +163,7 @@ namespace kpp
       target[1] = absPos ( 1,3 );
       target[2] = absPos ( 2,3 );
 
-      CtlcGraspBallGoalGeneratorShPtr goalConfigGenerator = planner->getGoalTask();
-      if ( !goalConfigGenerator )
-	{
-	  hppDout (warning, "Error in getting goalConfigGenerator");
-	  return KD_ERROR;
-	}
-      goalConfigGenerator->setNbGoalConfig(1);
-      goalConfigGenerator->target ( target[0], target[1], target[2] );
-      planner->generateGoalConfig ();
+      planner->generateGoalConfig ( target[0], target[1], target[2] );
 
       return KD_OK;
     }

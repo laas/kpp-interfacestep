@@ -1,7 +1,6 @@
 #ifndef KPP_INTERFACE_STEP_FWD_HH
 # define KPP_INTERFACE_STEP_FWD_HH
 # include <KineoUtility/kitDefine.h>
-# include <hpp/walkplanner/fwd.hh>
 
 KIT_PREDEF_CLASS (CkppUICommand);
 
