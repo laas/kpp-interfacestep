@@ -34,13 +34,8 @@ namespace kpp
       double samplingPeriod = 0.05;
       Planner * planner = new Planner(samplingPeriod);
 
-      if (!planner)
-	{
-	  return InterfaceShPtr ();
-	}
-
+      KIT_ASSERT(planner);
       planner->setFootPrintLimits(-0.2,0.2,-0.25,-0.13,-M_PI /4,0.1);
-
 
       InterfaceShPtr ptr (new Interface (planner));
       InterfaceWkPtr wkPtr (ptr);
