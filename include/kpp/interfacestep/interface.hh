@@ -19,7 +19,7 @@ namespace kpp
     public:
 
       typedef hpp::wholeBodyStepPlanner::Planner Planner;
-
+      typedef hpp::wholeBodyStepPlanner::Server Server;
 
       virtual ~Interface ();
 
@@ -27,13 +27,15 @@ namespace kpp
 
       virtual std::string name () const;
 
-      virtual void 
-      getMenuUICommandLists( const CkppMainWindowUICommandFactoryConstShPtr & inCommandFactory,
-			     std::vector< CkppUICommandListShPtr > & outMenuCommandListVector	 
+      virtual void
+      getMenuUICommandLists( const CkppMainWindowUICommandFactoryConstShPtr&
+			     inCommandFactory,
+			     std::vector< CkppUICommandListShPtr >&
+			     outMenuCommandListVector
 			     );
 
     protected:
-      Interface (Planner * inHppPlanner);
+      Interface (Planner* inHppPlanner);
 
       /// \brief Initialization of the object
       ///
@@ -41,22 +43,18 @@ namespace kpp
       /// calling this function.
       ktStatus init (const InterfaceWkPtr& inWeakPtr);
 
-
       /// Planner associed to the interface
-      Planner * attHppStepPlanner;
-
-      
-      
+      Planner* wholeBodyStepPlanner_;
 
       /// \}
     private:
       /// \brief Weak pointer to itself
-      InterfaceWkPtr attWeakPtr;
+      InterfaceWkPtr weakPtr_;
       CkppUICommandShPtr commandGrabObject_;
       CkppUICommandShPtr commandSetInitGoal_;
       CkppUICommandShPtr commandDynamicPath_;
       CkppUICommandShPtr commandRemoveConstraints_;
-   
+
     };
 
   } // end of namespace interfaceWalk.

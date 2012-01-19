@@ -63,7 +63,7 @@ namespace kpp
 
     private:
 
-      CommandGrabObjectWkPtr attWeakPtr;
+      CommandGrabObjectWkPtr weakPtr_;
 
       Interface *attKpp;
 

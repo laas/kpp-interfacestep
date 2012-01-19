@@ -22,7 +22,7 @@ namespace kpp
   {
    Interface::Interface (Planner * planner)
       : CkppInterface (planner),
-	attHppStepPlanner (planner)
+	wholeBodyStepPlanner_ (planner)
     {}
 
     Interface::~Interface ()
@@ -55,7 +55,7 @@ namespace kpp
     {
       if (CkppInterface::init (weakPtr) != KD_OK)
 	return KD_ERROR;
-      attWeakPtr = weakPtr;
+      weakPtr_ = weakPtr;
       return KD_OK;
     }
 
@@ -108,7 +108,7 @@ int
 initializeModule (CkppModuleInterfaceShPtr& o_moduleInterface)
 {
   using namespace kpp::interfaceStep;
- 
+
   o_moduleInterface = Interface::create ();
 
   if (o_moduleInterface)

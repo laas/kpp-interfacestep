@@ -50,7 +50,7 @@ namespace kpp
 
     CommandGrabObject::~CommandGrabObject()
     {
-      attWeakPtr.reset();
+      weakPtr_.reset();
     }
 
 
@@ -93,7 +93,7 @@ namespace kpp
   
       if(KD_OK == success)
 	{
-	  attWeakPtr = inWeakPtr;
+	  weakPtr_ = inWeakPtr;
 	}
 
 
@@ -106,7 +106,7 @@ namespace kpp
 
     CkppCommandShPtr CommandGrabObject::clone() const
     {
-      return CommandGrabObject::createCopy(attWeakPtr.lock());
+      return CommandGrabObject::createCopy(weakPtr_.lock());
     }
 
 
