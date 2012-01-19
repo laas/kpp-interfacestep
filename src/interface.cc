@@ -6,7 +6,9 @@
 
 # include <jrl/mal/matrixabstractlayer.hh>
 
+# include <hpp/util/debug.hh>
 # include <hpp/wholebody-step-planner/planner.hh>
+# include <hpp/corbaserver/wholebody-step/server.hh>
 
 # include <kpp/interfacestep/interface.hh>
 # include <kpp/interfacestep/command-grabobject.hh>
@@ -20,10 +22,28 @@ namespace kpp
 {
   namespace interfaceStep
   {
-   Interface::Interface (Planner * planner)
+    Interface::Interface (Planner * planner)
       : CkppInterface (planner),
 	wholeBodyStepPlanner_ (planner)
-    {}
+    {
+      char** argv = (char**) malloc (sizeof (char*));
+      argv[0] = strdup ("Kite");
+      server_ = new Server (1, argv, false, "child");
+      server_->setPlanner (wholeBodyStepPlanner_);
+      try {
+	startCorbaServer ();
+	hppDout (info, "Successfully started hpp-corbaserver.");
+      } catch (const std::exception& exc) {
+	hppDout (error, "Failed to start hpp-corbaserver");
+      }
+      try {
+	server_->startCorbaServer("hpp", "plannerContext",
+				  "hpp", "wholeBodyStep");
+	hppDout (info, "Successfully started wholebody-step corba server.");
+      } catch (const std::exception& exc) {
+	hppDout (error, "Failed to start wholebody-step corba server.");
+      }
+    }
 
     Interface::~Interface ()
     {}

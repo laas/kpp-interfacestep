@@ -44,13 +44,14 @@ SET(${PROJECT_NAME}_HEADERS
 SETUP_PROJECT()
 
 # Activate hpp-util logging if requested
+SET (HPP_DEBUG FALSE CACHE BOOL "trigger hpp-util debug output")
 IF (HPP_DEBUG)
-  MESSAGE(STATUS "Activate hpp-util logging.")
   SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DHPP_DEBUG")
 ENDIF()
 
 # Search for dependencies.
 ADD_REQUIRED_DEPENDENCY("hpp-wholebody-step-planner >= 0.1")
+ADD_REQUIRED_DEPENDENCY("hpp-wholebody-step-corba >= 0.1")
 ADD_REQUIRED_DEPENDENCY("kppInterface >= 1.7")
 
 # Reinitialize directory where libs are installed since for Kineo addon, this
@@ -69,6 +70,7 @@ KINEO_ADDON(${PROJECT_NAME})
 
 PKG_CONFIG_USE_DEPENDENCY(${PROJECT_NAME} hpp-wholebody-step-planner)
 PKG_CONFIG_USE_DEPENDENCY(${PROJECT_NAME} kppInterface)
+PKG_CONFIG_USE_DEPENDENCY(${PROJECT_NAME} hpp-wholebody-step-corba)
 
 SETUP_PROJECT_FINALIZE()
 SETUP_PROJECT_CPACK()

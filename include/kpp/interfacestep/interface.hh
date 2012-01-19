@@ -5,6 +5,7 @@
 # include <KineoController/kppUICommand.h>
 
 # include <hpp/wholebody-step-planner/fwd.hh>
+# include <hpp/corbaserver/wholebody-step/fwd.hh>
 
 # include <kpp/interfacestep/fwd.hh>
 # include <kpp/interfacestep/kppinterface-nowarning.hh>
@@ -45,6 +46,7 @@ namespace kpp
 
       /// Planner associed to the interface
       Planner* wholeBodyStepPlanner_;
+      Server* server_;
 
       /// \}
     private:
