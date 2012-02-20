@@ -163,7 +163,7 @@ namespace kpp
       target[1] = absPos ( 1,3 );
       target[2] = absPos ( 2,3 );
 
-      planner->generateGoalConfig ( target[0], target[1], target[2] );
+      planner->generateGoalConfig (target[0], target[1], target[2], 1);
 
       return KD_OK;
     }
