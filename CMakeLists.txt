@@ -52,7 +52,7 @@ ENDIF()
 # Search for dependencies.
 ADD_REQUIRED_DEPENDENCY("hpp-wholebody-step-planner >= 0.1")
 ADD_REQUIRED_DEPENDENCY("hpp-wholebody-step-corba >= 0.1")
-ADD_REQUIRED_DEPENDENCY("kppInterface >= 1.7")
+ADD_REQUIRED_DEPENDENCY("kpp-interface >= 2.0")
 
 # Reinitialize directory where libs are installed since for Kineo addon, this
 # directory is non standard: lib/modules/${UNAME_N}
@@ -69,8 +69,8 @@ SET(KINEO_ADDON_SOURCES
 KINEO_ADDON(${PROJECT_NAME})
 
 PKG_CONFIG_USE_DEPENDENCY(${PROJECT_NAME} hpp-wholebody-step-planner)
-PKG_CONFIG_USE_DEPENDENCY(${PROJECT_NAME} kppInterface)
 PKG_CONFIG_USE_DEPENDENCY(${PROJECT_NAME} hpp-wholebody-step-corba)
+PKG_CONFIG_USE_DEPENDENCY(${PROJECT_NAME} kpp-interface)
 
 SETUP_PROJECT_FINALIZE()
 SETUP_PROJECT_CPACK()
