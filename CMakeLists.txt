@@ -50,9 +50,9 @@ IF (HPP_DEBUG)
 ENDIF()
 
 # Search for dependencies.
-ADD_REQUIRED_DEPENDENCY("hpp-wholebody-step-planner >= 0.1")
+ADD_REQUIRED_DEPENDENCY("hpp-wholebody-step-planner >= 0.2")
 ADD_REQUIRED_DEPENDENCY("hpp-wholebody-step-corba >= 0.1")
-ADD_REQUIRED_DEPENDENCY("kpp-interface >= 2.0")
+ADD_REQUIRED_DEPENDENCY("kpp-interface >= 2.1")
 
 # Reinitialize directory where libs are installed since for Kineo addon, this
 # directory is non standard: lib/modules/${UNAME_N}
