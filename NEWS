@@ -1,4 +1,8 @@
                                                                 -*- outline -*-
 
+New in 0.2, 2013-09-26:
+* Update to kpp-interface 2.0
+* Update to hpp-wholebody-step-planner 0.2
+
 New in 0.1, kpp-interfacestep:
 * First release.
