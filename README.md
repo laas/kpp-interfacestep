@@ -1,3 +1,5 @@
-                                                                -*- outline -*-
+kpp-interfacestep
+=================
 
-* FIXME
+This package implements a graphical user interface for the
+hpp-wholebody-step-planner package.
