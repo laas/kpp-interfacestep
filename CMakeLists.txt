@@ -50,6 +50,7 @@ IF (HPP_DEBUG)
 ENDIF()
 
 # Search for dependencies.
+ADD_REQUIRED_DEPENDENCY("hpp-util >= 0.7")
 ADD_REQUIRED_DEPENDENCY("hpp-wholebody-step-planner >= 0.2")
 ADD_REQUIRED_DEPENDENCY("hpp-wholebody-step-corba >= 0.1")
 ADD_REQUIRED_DEPENDENCY("kpp-interface >= 2.1")
@@ -68,6 +69,7 @@ SET(KINEO_ADDON_SOURCES
 
 KINEO_ADDON(${PROJECT_NAME})
 
+PKG_CONFIG_USE_DEPENDENCY(${PROJECT_NAME} hpp-util)
 PKG_CONFIG_USE_DEPENDENCY(${PROJECT_NAME} hpp-wholebody-step-planner)
 PKG_CONFIG_USE_DEPENDENCY(${PROJECT_NAME} hpp-wholebody-step-corba)
 PKG_CONFIG_USE_DEPENDENCY(${PROJECT_NAME} kpp-interface)
