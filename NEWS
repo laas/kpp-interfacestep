@@ -1,5 +1,10 @@
                                                                 -*- outline -*-
 
+New in 0.3, 2013-10-08:
+* Add hpp-util dependency.
+* Fix compilation warnings.
+* Synchronize cmake submodule.
+
 New in 0.2, 2013-09-26:
 * Update to kpp-interface 2.0
 * Update to hpp-wholebody-step-planner 0.2
